@@ -1,0 +1,484 @@
+.card {
+    border: 1px solid #e6e5e5 !important;
+    box-shadow: none !important
+}
+.body{
+    font-size: 13px;
+}
+.header-title {
+   color: #585c63;
+}
+.last-right td:first-child {
+    color: #6d757d;
+}
+.t-bodyes .div-table-col {
+    color: #040d14;
+    font-size: 13px;
+}
+.btn-outline-primary {
+    color: #3f46ad;
+    background-color: transparent;
+    background-image: none;
+    border-color: #3f46ad;
+    font-weight: bold;
+}
+.btn-primary {
+    border-color: #3f46ad;
+}
+.btn{
+    font-weight: bold;
+}
+.f-l{
+    float: left;
+}
+.chartjs-chart{
+    height: 320px;
+}
+
+.card {
+    border: none;
+    /* -webkit-box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15); */
+    box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+    margin-bottom: 10px;
+}
+.pad-0 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.pad-5 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.pad-left-5{
+ padding-left: 5px;
+}
+.pad-right-5{
+  padding-right: 5px;
+}
+.m-t-10{
+    margin-top:10px
+}
+
+ul.navigationUl {
+    list-style-type: none;
+    float: left;
+}
+ul.navigationUl li {
+    float: left;
+     margin: 8px;
+}
+ul.navigationUl li a {
+    color: #585c63;
+    font-weight: bold;
+}
+
+select.form-control.form-control-light.toggle-color {
+    color: #585c63;
+    font-weight: bold;
+}
+
+.p-a {
+    position: absolute;
+}
+
+.f-15 {
+    font-size: 15px !important;
+}
+.sidebar {
+    background: #0e141e;
+    z-index: 99999999;
+}
+
+.table-watch tr {
+    border-bottom: 0.5px solid #000 !important;
+} 
+td.watchValue{
+    float: right;
+}
+td.watchParchantage {
+    text-align: center;
+}
+
+
+.mainDiv{
+    padding-left: 17%;
+}
+
+.sidebar{
+    position: fixed;
+    height: 100%;
+}
+
+    .p-l-r-5 {
+        padding-left: 0px;
+        padding-right: 0px;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        left: 0;
+        padding-left: 17%;
+        max-width: 100%;
+    
+}
+
+.full-width-toggle{
+    padding: 0 15px 0px 0px;
+    margin-left: -22px;
+}
+
+
+.app-search {
+    padding: 10px 6px;
+    overflow: hidden;
+}
+
+.p-65{
+    padding-top:67px;
+}
+h3.market-heading a{
+    float: left;
+    font-size: 15px;
+    color: #040d14;
+    line-height: 30px;
+}
+p.market-subheading-price {
+    width: 100%;
+    float: left;
+    text-align: left;
+    color: #040d14;
+    line-height: 5px;
+    font-size: 13px
+}
+
+p.market-subheading-range {
+    width: 100%;
+    float: left;
+    text-align: left;
+    line-height: 0px;
+    font-size: 13px
+
+}
+.pad-15{
+    padding-left:15px; 
+}
+.marketchart .recharts-wrapper {
+    margin-left: -43px;
+}
+.f-20{
+    font-size: 20px !important;
+}
+.last-right-market td:last-child {
+    float: right;
+    margin-right: 0px;
+    color: #0c121b;
+}
+.last-right-market th:last-child {
+    text-align: right;
+}
+.center-market-table {
+    text-align: center;
+}
+table.table.table-sm.table-centered.mb-0.last-right-market td {
+    font-size: 15px;
+    
+}
+.last-right-market td:first-child{
+    color: #0c121b;
+    font-weight: bold;
+}
+.last-right-market a{
+    color: #0c121b;
+    font-weight: bold;
+}
+td.center-market-table {
+    color: #1fa764;
+}
+.w-33{
+ width:33%;
+}
+
+.News-header-section {
+    text-align: left;
+}
+
+.news-heading {
+    font-size: 20px; 
+    color: #11151e;
+}
+p.news-summary{
+    color: #11151e;
+}
+p.newsTag {
+    font-size: 14px;
+    color: #11151e;
+   
+}
+p.newsTag ul li {
+    float: left;
+    position: relative;
+    width: 70px
+}
+.newsTag ul li span a{
+    color:#3f46ad;
+    font-weight: 500
+}
+p.newsTag ul {
+    list-style-type: none;
+    position: relative;
+    margin-top: -28px;
+}
+p.newsTag span {
+    margin-left: 15px;
+    background: #f6f7f9;
+    padding: 4px 10px;
+   border-radius: 10px 10px 10px 10px;
+    line-height: 37px;
+}
+.b-c-g {
+    background-color: #f6f7f9 ;
+    height: 201px;
+}
+.newsSection {
+    margin: 30px 0px;
+}
+.m-t-05{
+    margin-top: 0.5rem;
+}
+.m-t-0-5{
+    margin-top: -5px;
+}
+
+ul.searchUl {
+    list-style-type: none;
+    background: #0e141e;
+    width: 60%;
+    float: left;
+}
+.searchResponse {
+    background: #fff;
+    width: 60%;
+    min-height: 20px;
+    border: 1px solid #e6e5e5;
+    margin-top: 4px;
+    border-radius: .25rem;
+
+}
+tr.hover-color {
+    background: #f6f7f9;
+}
+.input-group.margin-left-searchbar {
+    width: 60%;
+    background: #f6f7f9;
+}
+a.searchLink {
+    color: #000;
+}
+
+td a.searchLink {
+    color: #000;
+    padding: 10px !important;
+}
+th.searchLink {
+    color: #000;
+    padding: 10px !important;
+}
+span.highlight {
+    font-size: 13px;
+    position: inherit;
+    color: rgb(31 , 167, 100);
+    line-height: 0px;
+}
+td.searchLink p {
+    padding: 10px;
+}
+table.table.table-sm.table-centered.table-wihtout-border tr {
+    border: none;
+}
+table.table.table-sm.table-centered.table-wihtout-border thead tr th {
+    border: none;
+}
+
+.table-wihtout-border tr {
+    border: none;
+}
+
+.border-none{
+   border: none !important;;
+}
+.div-table:last-child {
+    border: none !important;
+}
+
+.middle-container {
+    width: 100%;
+    max-width: 100%;
+}
+.nav-tabs.nav-bordered li a.active {
+    border-bottom: 2px solid #3f46ad;
+}
+
+.buysellLiset button {
+    border-radius: 0;
+    width: 45%;
+    float: left;
+  }
+  .buysellLiset {
+    float: left;
+    width: 49%;
+  }
+  .opencloseList button {
+    width: 45%;
+    border-radius: 0px;
+    
+  }
+  .opencloseList {
+    float: right;
+    width: 49%;
+  }
+  
+  .padding-t-b-5 td{
+    padding: 5px 0 !important;
+    
+}
+.d-n{
+   display: none;
+ 
+}
+
+.show .searchResponse{
+    display: block!important;
+    position: relative !important;
+    transform: translate3d(0px, 4px, 0px) !important;
+}
+
+.margin-left-searchbar{
+  border-radius: .25rem !important;
+}
+
+table.table.table-sm.table-centered.mb-0.history-table tbody tr{
+    color: #111514;
+}
+a.a-black {
+    color: #111514;
+}
+
+@media screen and (min-width: 1365) {
+    .margin-left-searchbar{
+        margin-left: 20%;
+    }
+    .card.card-topCahrtAccount {
+        height: 60vh !important;
+        min-height:452px
+      }
+}
+@media screen and (min-width: 1025px) {
+    .gain-Div{
+        width:90%;
+        float: left;
+    }
+    .loss-Div{
+        width:90%;
+        float: right;
+    }
+    .loss-heading{
+        margin-left: 10%;
+    }
+    .margin-left-searchbar{
+        margin-left: 0%;
+    }
+    .card.card-topCahrtAccount {
+        height: 60vh !important;
+        min-height:452px
+      }
+ }
+@media screen and (max-width: 1025px) {
+    .mainDiv{
+        padding-left: 17%;
+    }
+    .f-15{
+        font-size: 12px !important;
+    }
+    .p-l-r-5 {
+       padding-left: 6px;
+       padding-right: 0px;
+   }
+   .m-r-65 {
+    margin-right: 65px;
+  }
+  .buysellLiset button {
+     float: initial;
+   }
+   .positionbuttongroup{
+    margin-top: 10px;
+    padding: 0px;
+   }
+   .m-m-l--2{
+    padding-left: 15px;
+   }
+  
+}
+@media screen and (max-width: 995px) {
+    .mainDiv{
+        padding-left: 25%;
+    }
+    .p-l-r-5 {
+        padding-left: 8px;
+       padding-right: 0px;
+   }
+   .margin-left-searchbar{
+    margin-left: 12%;
+  }
+}
+@media screen and (max-width: 812px) {
+    .mainDiv{
+        padding-left: 25%;
+    }
+    .p-l-r-5 {
+        padding-left: 8px;
+       padding-right: 0px;
+   }
+   .margin-left-searchbar{
+    margin-left: 15%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+    .sidebar{
+        position: relative;
+     }
+     .mainDiv{
+        padding-left: 0%;
+    }
+    .p-l-r-5 {
+        padding-left: 10px;
+       padding-right: 0px;
+   }
+   .p-l-r-5 {
+    padding-left: 8px;
+    padding-right: 0px;
+    position: relative;
+    z-index: 999;
+    width: 100%;
+}
+.m-r-65 {
+    margin-right: 0px;
+}
+
+.margin-left-searchbar{
+    margin-left: 20%;
+}
+
+
+}
+@media screen and (max-width: 500px) {
+    .b-c-g {
+        margin: 10px;
+    }
+}
+
+.black {
+    background-color: #141820;
+}
+.watch-list-border-color {
+    border: 1px solid black !important;
+}

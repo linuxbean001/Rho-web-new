@@ -1,0 +1,47 @@
+.black-background {
+    background-color: #0e141e !important;
+    border: 1px solid #000000 !important;
+}
+.black-background-header {
+    background-color: #141820 !important;
+    border: 1px solid #000000 !important;
+}
+.nav-text-color {
+    color: #ffffff !important;
+}
+.card-border {
+    border: 1px solid #000000 !important;
+}
+.color {
+    background-color: #0e141e !important;
+    border: none;
+    color: #ffffff !important;
+   }
+    
+   tr.hover-color.nav-text-color {
+    background-color: #141820;
+}
+
+
+.white-last td:last-child {
+    float: right;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 0px;
+}
+.white-last tr {
+    border-top: 1px solid #000;
+}
+button.btn.btn-secondary.orderBtn2-right {
+    width: 48%;
+    margin: 0px -38px 0px 25px;
+    
+}
+a.btn.btn-warning.orderBtn2-left {
+    width: 48%;
+    margin: 0px 15px 0px -20px;
+    color: #000;
+}
+.btn-warning.btn-trade {
+    color: #000;
+}

@@ -1,0 +1,80 @@
+
+/*  color change start */
+
+button.btn.btn-link-fb.c-b-f-b.underline {
+    border-bottom: 2px solid red;
+}
+
+.btn-link-fb {
+    font-weight: 400;
+    color: black;
+    background-color: transparent; }
+    
+    .btn-link-fb:hover {
+      color: #fcc73b;
+      text-decoration: none;
+      background-color: transparent;
+      border-color: transparent; }
+    .btn-link-fb:focus, .btn-link-fb.focus {
+      text-decoration: none;
+      border-color: transparent;
+      -webkit-box-shadow: none;
+              box-shadow: none; }
+    .btn-link-fb:disabled, .btn-link1.disabled {
+      color: #adb5bd;
+      pointer-events: none; }
+
+      button.btn.btn-link-fb.c-b-f-b.underline {
+        border-bottom: 2px solid #fcc73b;
+    }
+/*  color change end */
+
+
+.f-28{
+    font-size: 37px !important;
+}
+.f-13{
+    font-size: 13px !important;
+}
+.f-24{
+    color: #1fa764;
+    font-size: 24px !important;
+}
+.graph-fb{
+    max-height: 400px ;
+    margin-left: -20px;
+}
+.p-l-20{
+    padding-left: 20px;
+}
+
+.title-color{
+    color: #ffffff;
+}
+.btn-follow{
+    margin-top: 10px;
+    border-radius: 16px;
+    width: 110px;
+    background-color: #0e141e;
+    color: #fcc73b !important;
+}
+.btn-following{
+    margin-top: 10px;
+    border-radius: 16px;
+    width: 110px;
+    color: #0e141e !important;
+}
+
+/* graph css*/
+.apexcharts-toolbar{
+    display: none !important;
+}
+
+.m-t-b-10{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+path {
+    stroke: #8e8e93 !important;
+    }

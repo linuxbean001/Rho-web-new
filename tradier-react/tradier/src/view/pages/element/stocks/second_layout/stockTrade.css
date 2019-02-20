@@ -1,0 +1,269 @@
+
+/*  color change start */
+
+.buysellLiset-trade button {
+    border-radius: 0;
+    width: 46%;
+    float: left;
+  }
+  .buysellLiset-trade {
+    float: left;
+    width: 50%;
+  }
+
+  .opencloseList {
+    float: right;
+    width: 50%;
+}
+
+  .btn-outline-warning:hover {
+    color: #fff;
+    background-color: #fcc73b;
+    border-color: #fcc73b;
+}
+
+.nav-tabs .nav-item-trade {
+    margin-bottom: -1px;
+    width: 25%;
+    background-color: #0e141e;
+}
+
+.nav-tabs.nav-bordered-trade li a.active {
+    border-bottom: 2px solid #fcc73b;
+}
+
+.nav-tabs.nav-bordered-trade li a {
+    border: 0;
+    padding: 0.625rem 1.25rem;
+}
+/*  color change stop */
+.top-margin{
+    margin-top: 10px;
+}
+.btn-margin{
+    margin-left: 0px;
+}
+.left-margin{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.btn-pre-left{
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 13px;
+}
+
+.btn-pre {
+    display: block;
+    width: 98%;
+}
+.bottom-message{
+    margin-left: 15%;
+    width: 68%;
+    font-size: 12px;
+}
+
+.order-option{
+    margin-left: 13px;
+     margin-right: 16px;
+}
+
+.time-option{
+    margin-left: 13px;
+    margin-right: 15px;
+    margin-bottom: 13px; 
+}
+.box-background-color {
+   background-color: #0e141e !important;
+}
+.box-border {
+    border: 1px solid  #000000;
+}
+.text-color {
+    color: #ffffff !important;
+}
+.btn-trade {
+    background-color: #fcc73b;
+    color: #313a46;
+}
+
+.m-t-5{
+    margin-top: 10px;
+}
+
+h4.header-title.f-20.text-color.t-a-c {
+    text-align: center;
+    width: 100%;
+}
+
+select.form-control.optionExpiration {
+    width: 75%;
+    float: right;
+    background: #0e141e;
+    border: 1px solid #000;
+    color:#6d757d
+}
+.white-last th:last-child {
+    float: right;
+    font-weight: 600;
+    margin-right: 0px;
+}
+table.table.table-sm.table-centered.last-right.white-last.mb-0 th {
+    border: none;
+}
+td.color-green {
+    color: #1fa764 !important;
+}
+span.caret {
+    margin-left: 30px;
+}
+.optionExpiration{
+    background: #0e141e;
+    border: 1px solid #000;
+    color:#6d757d
+}
+.btn-dark {
+    -webkit-box-shadow: none;
+    box-shadow:none;
+    color:#6d757d
+}
+.btn-dark:hover {
+   background-color: #0e141e;
+   color:#6d757d
+}
+.btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active, .show > .btn-dark.dropdown-toggle {
+    color:#6d757d;
+    background-color: #0e141e;
+    border-color: #000;
+}
+.optiondropdown{
+    color:#6d757d;
+    background-color: #0e141e;
+    border-color: #000;
+}
+.dropdown-menu {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.dropdown-menu a{
+    cursor: pointer;
+}
+.btn:focus, .btn.focus {
+    outline: 0;
+    -webkit-box-shadow: none; 
+     box-shadow: none;
+}
+
+
+.container1{
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container1 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #0e141e;
+    border: 2px solid #000;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container1:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container1 input:checked ~ .checkmark {
+    background-color: #d9a000;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container1 input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container1 .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+/* .round {
+    position: relative;
+  }
+  
+  .round label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: -4;
+    width: 28px;
+  }
+  
+  .round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
+  }
+  
+  .round input[type="checkbox"] {
+    visibility: hidden;
+  }
+  
+  .round input[type="checkbox"]:checked + label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+  }
+  
+  .round input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+  } */
