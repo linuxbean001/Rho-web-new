@@ -25,11 +25,11 @@ class StockFb extends Component {
                     type: 'category',
                     categories: [],
                     labels: {
-                        show: false,
+                        show: true,
                         hideOverlappingLabels: false,
                         trim: false,
                         style: {
-                            colors: [],
+                            colors: '#fff',
                             fontSize: '12px',
                             fontFamily: 'Helvetica, Arial, sans-serif',
                             cssClass: 'apexcharts-xaxis-label',
@@ -45,8 +45,8 @@ class StockFb extends Component {
                         },
                     },
                     axisBorder: {
-                        show: false,
-                        color: '#78909C',
+                        show: true,
+                        color: '#fff',
                         height: 1,
                         width: '100%',
                         offsetX: 0,
@@ -87,6 +87,7 @@ class StockFb extends Component {
                             color: '#b6b6b6',
                             width: 0,
                             dashArray: 0,
+                            curve: 'smooth',
                         },
                         fill: {
                             type: 'solid',
@@ -119,12 +120,12 @@ class StockFb extends Component {
                         enabled: true
                     },
                     labels: {
-                        show: false,
+                        show: true,
                         hideOverlappingLabels: false,
                         trim: false,
                         style: {
-                            colors: [],
-                            fontSize: '12px',
+                            color: '#fff',
+                            fontSize: '15px',
                             fontFamily: 'Helvetica, Arial, sans-serif',
                             cssClass: 'apexcharts-xaxis-label',
                         },
@@ -134,8 +135,8 @@ class StockFb extends Component {
                         formatter: undefined,
                     },
                     axisBorder: {
-                        show: false,
-                        color: '#78909C',
+                        show: true,
+                        color: '#fff',
                         height: 1,
                         width: '100%',
                         offsetX: 0,
