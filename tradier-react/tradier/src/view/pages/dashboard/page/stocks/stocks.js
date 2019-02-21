@@ -39,7 +39,7 @@ class Stocks extends Component {
   }
 
   render() {
-
+               //console.log('sdhfks fka:',this.state.topData);
     return (
       <div>
         <div className="container-fluid p-l-r-5 ">
@@ -51,7 +51,7 @@ class Stocks extends Component {
           {this.state.topData ? <StockFb pageSymbol={this.props.symbol} quoteData={this.state.topData} /> : ''}
 
           {/* <StockTrade/> */}
-          <StockTqc quoteData={this.state.topData} />
+          <StockTqc quoteData={this.state.topData} pageSymbol={this.props.symbol}  />
         </div>
       </div>
 

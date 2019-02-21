@@ -230,7 +230,7 @@ class StockTrade extends Component {
         }
     }
     createOrder(option, formdata) {
-        //console.log('formdasta=',formdata);
+        console.log('formdasta=',formdata);
         if (formdata.status === 'ok') {
             var price = '';
             var stop = '';
@@ -340,7 +340,7 @@ class StockTrade extends Component {
         this.setState({ orderformAndPreviewList: 0 });
     }
     render() {
-
+          // console.log('hggggggggggggggggggggj:',this.props.quoteData);
         return (
             <div className=" ">
                 <div className="card-body">
@@ -390,7 +390,11 @@ class StockTrade extends Component {
                                                 <tbody>
                                                     <tr>
                                                         <td >Bid</td>
-                                                        <td className="text-color">137.10 x 25</td>
+                                                        <td className="text-color">
+                                                        { this.props.quoteData && this.props.quoteData.quotes.quote.bid ? this.props.quoteData.quotes.quote.bid : '0'} 
+                                                        {this.props.quoteData.quotes && this.props.quoteData.quotes.quote && this.props.quoteData.quotes.quote.bidsize ? ' x '+ this.props.quoteData.quotes.quote.bidsize : ' X 0'}
+                                                        
+                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -401,7 +405,11 @@ class StockTrade extends Component {
                                                 <tbody>
                                                     <tr>
                                                         <td >Ask</td>
-                                                        <td className="text-color">137.10 x 10</td>
+                                                        <td className="text-color">
+                                                        { this.props.quoteData && this.props.quoteData.quotes.quote.ask ? this.props.quoteData.quotes.quote.ask : '0'} 
+                                                        {this.props.quoteData.quotes && this.props.quoteData.quotes.quote && this.props.quoteData.quotes.quote.asksize ? ' x '+ this.props.quoteData.quotes.quote.asksize : ' X 0'}
+                                                        
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>

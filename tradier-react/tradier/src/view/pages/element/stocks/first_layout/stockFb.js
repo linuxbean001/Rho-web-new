@@ -374,7 +374,7 @@ class StockFb extends Component {
                             </div>
                         </div>
                         <div className="table-responsive-sm">
-                            <h4 className="header-title f-28 title-color">{this.props.quoteData.quotes.quote.last ? '$' + this.props.quoteData.quotes.quote.last : '$0.00'} <span className='f-24' >{this.props.quoteData.quotes.quote.change ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change) : '0.0'}({this.props.quoteData.quotes.quote.change_percentage ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change_percentage) : '0.0'}%)</span></h4>
+                            <h4 className="header-title f-28 title-color">{this.props.quoteData.quotes.quote.last ? '$' + this.props.quoteData.quotes.quote.last : '$0.00'} <span className='f-24' >{this.props.quoteData.quotes.quote.change ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change) : '0.0'} ({this.props.quoteData.quotes.quote.change_percentage ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change_percentage) : '0.0'}%)</span></h4>
                             <div className="graph-fb">
                                 {graphData.length > 0 ? <ReactApexChart options={this.state.options} series={graphData} type="candlestick" height="350" /> : <p className="title-color t-a-l p-l-20">No chart data available.</p>}
 

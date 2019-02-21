@@ -10,21 +10,21 @@ class StockTqc extends Component {
         super(props);
     }
     render() {
-
+     // console.log('hggggggggggggggggggggj:',this.props.quoteData);
         return (
             <div className="container ">
                 <div className="row">
                     <div className="col-xl-6 pad-5">
                         <div className="card black-background card-border">
-                            <StockTrade />
+                            <StockTrade pageSymbol={this.props.pageSymbol}  quoteData={this.props.quoteData} />
                         </div>
                         <div className="card black-background card-border">
-                            <StockCompany />
+                            <StockCompany pageSymbol={this.props.pageSymbol} />
                         </div>
                     </div>
                     <div className="col-xl-6 pad-5 ">
                         <div className="card card-topCahrtAccountStockTqc black-background card-border"  >
-                            <StockQuote />
+                            <StockQuote pageSymbol={this.props.pageSymbol} />
                         </div>
                     </div>
                 </div>
