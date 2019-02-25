@@ -39,7 +39,9 @@ class StockFb extends Component {
                         offsetX: 0,
                         offsetY: 0,
                         format: undefined,
-                        formatter: undefined,
+                        formatter: function(v, t, i) {
+                           return i % 9 === 0 ? v : ''
+                        },
                         datetimeFormatter: {
                             month: "MMM 'yy",
                             day: 'dd MMM',
@@ -176,7 +178,7 @@ class StockFb extends Component {
                     padding: {
                         top: 0,
                         right: 0,
-                        bottom: 0,
+                        bottom: 20,
                         left: 10
                     },
                 }
