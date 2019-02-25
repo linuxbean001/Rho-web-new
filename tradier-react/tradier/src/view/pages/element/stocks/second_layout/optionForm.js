@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './stockTrade.css'
+import './optionForm.css'
 import BasicFunction from '../../../../../controller/basicFunction';
 import Trading from '../../../../../modal/trading/trading';
 const basicFunction = new BasicFunction;
@@ -28,7 +29,11 @@ class OptionForm extends Component {
             orderbtnClass2: 'open',
             orderbtnClass3: 'call',
             optionformAndPreviewList: 0,
-            formBackResponseData: ''
+            formBackResponseData: '',
+            expireDate: '',
+            chainsData: [],
+            localSymbol: '',
+            selectedExpireDate: ''
         }
     }
 
@@ -348,8 +353,86 @@ class OptionForm extends Component {
         this.setState({ orderSuccess: 0 });
         this.setState({ orderformAndPreviewList: 0 });
     }
-    render() {
 
+    componentDidMount() {
+        this.setState({ localSymbol: this.props.pageSymbol });
+        this.getExpireDate();
+    }
+
+
+    componentWillReceiveProps(props) {
+
+        if (this.state.localSymbol != this.props.pageSymbol) {
+            this.state.localSymbol = this.props.pageSymbol;
+            this.getExpireDate();
+        }
+
+        {/*  if(this.state.selectedExpireDate){
+            this.optionChain(this.state.selectedExpireDate);
+        }  */}
+
+    }
+
+    getExpireDate() {
+        const symbol = this.props.pageSymbol;
+        var formdata = {
+            Symbol: symbol
+        }
+        trading.expireDate(localStorage.getItem("Authorization"), formdata)
+            .then(res => {
+                const data = JSON.parse(res.data.data);
+                this.setState({ expireDate: data.expirations.date })
+                this.initialDateValueChange(this.state.expireDate[0]);
+                this.setState({ selectedExpireDate: this.state.expireDate[0] });
+                console.log('response Ex:', this.state.expireDate[0]);
+            });
+    }
+
+    initialDateValueChange(date) {
+        this.dateChangeValue(date);
+        console.log('This is Date', date);
+    }
+
+    optionDateValue(date) {
+        console.log('date', date.target.value);
+        this.dateChangeValue(date.target.value);
+    }
+
+    dateChangeValue(expireDate) {
+        //const symbol = this.props.pageSymbol;
+        const expiredate = expireDate;
+        this.setState({ selectedExpireDate: expireDate });
+        const symbol = this.props.pageSymbol;
+        var formdata = {
+            Symbol: symbol,
+            ExpireDate: expiredate
+        }
+        trading.expireChainDate(localStorage.getItem("Authorization"), formdata)
+            .then(res => {
+                const data = JSON.parse(res.data.data);
+                this.setState({ chainsData: data.options.option });
+                console.log('response CH:', this.state.chainsData);
+            });
+    }
+
+    render() {
+        var saprateCallAndPutValue = [];
+        if (this.state.actionType3 === 'call') {
+            this.state.chainsData.map((value, i) => {
+                if (value.option_type === 'call') {
+                    saprateCallAndPutValue.push(value);
+                }
+            })
+        }
+        else {
+            this.state.chainsData.map((value, i) => {
+                if (value.option_type === 'put') {
+                    saprateCallAndPutValue.push(value);
+                }
+            })
+        }
+
+        console.log('saprateCallAndPutValue', saprateCallAndPutValue);
         return (
             <div>
                 <div className="StockTab">
@@ -362,10 +445,19 @@ class OptionForm extends Component {
 
                             <div className="btn-group mb-2 f-r">
                                 <div className="btn-group show">
-                                    <button type="button" className="btn btn-dark dropdown-toggle optionExpiration" data-toggle="dropdown" aria-expanded="false"> Expiration <span className="caret"></span> </button>
-                                    <div className="dropdown-menu optiondropdown" x-placement="bottom-start" style={{ 'position': 'absolute', 'willChange': 'transform', 'top': '0px', 'left': '0px', 'transform': 'translate3d(0px, 37px, 0px)' }}>
-                                        <a className="dropdown-item" >Dropdown link</a>
-                                        <a className="dropdown-item" >Dropdown link</a>
+                                    {/* <button type="button" className="btn btn-dark dropdown-toggle optionExpiration" data-toggle="dropdown" aria-expanded="false"> Expiration <span className="caret"></span> </button>
+                                   <div className="dropdown-menu optiondropdown" x-placement="bottom-start" style={{ 'position': 'absolute', 'willChange': 'transform', 'top': '0px', 'left': '0px', 'transform': 'translate3d(0px, 37px, 0px)' }}>
+                                    {Object.keys(this.state.expireDate).map((er, i) => (
+                                        <a key={i} className="dropdown-item" >{this.state.expireDate[er]}</a>
+                                    ))}
+                                    </div> */}
+                                    <div className="select-items">
+                                        <select onChange={this.optionDateValue.bind(this)} className="optionExpiration">
+                                            <option value="">Expiration</option>
+                                            {Object.keys(this.state.expireDate).map((er, i) => (
+                                                <option key={i} value={this.state.expireDate[er]} className="optiontest" > {this.state.expireDate[er]} </option>
+                                            ))}
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -385,58 +477,22 @@ class OptionForm extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <label className="container1">
-                                                <input type="checkbox" />
-                                                <span className="checkmark"></span>
-                                            </label>
-                                        </td>
-                                        <td className="text-color">$31.0</td>
-                                        <td className="text-color">1.32</td>
-                                        <td className="text-color">1.34</td>
-                                        <td className="text-color">31.0</td>
-                                        <td className="color-green">7.38%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label className="container1">
-                                                <input type="checkbox" />
-                                                <span className="checkmark"></span>
-                                            </label>
-                                        </td>
-                                        <td className="text-color">$31.0</td>
-                                        <td className="text-color">1.32</td>
-                                        <td className="text-color">1.34</td>
-                                        <td className="text-color">31.0</td>
-                                        <td className="color-green">7.38%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label className="container1">
-                                                <input type="checkbox" />
-                                                <span className="checkmark"></span>
-                                            </label>
-                                        </td>
-                                        <td className="text-color">$31.0</td>
-                                        <td className="text-color">1.32</td>
-                                        <td className="text-color">1.34</td>
-                                        <td className="text-color">31.0</td>
-                                        <td className="color-green">7.38%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label className="container1">
-                                                <input type="checkbox" />
-                                                <span className="checkmark"></span>
-                                            </label>
-                                        </td>
-                                        <td className="text-color">$31.0</td>
-                                        <td className="text-color">1.32</td>
-                                        <td className="text-color">1.34</td>
-                                        <td className="text-color">31.0</td>
-                                        <td className="color-green">7.38%</td>
-                                    </tr>
+                                    {saprateCallAndPutValue.map((value, i) =>
+                                        <tr>
+                                            <td>
+                                                <label className="container1">
+                                                    <input type="checkbox" />
+                                                    <span className="checkmark"></span>
+                                                </label>
+                                            </td>
+
+                                            <td className="text-color">{basicFunction.currancyAddWithNumber(value.strike)}</td>
+                                            <td className="text-color">{basicFunction.nombarFormat(value.bid)}</td>
+                                            <td className="text-color">{basicFunction.nombarFormat(value.ask)}</td>
+                                            <td className="text-color">{basicFunction.nombarFormat(value.last)}</td>
+                                            <td ><span className={basicFunction.priceColor(value.change_percentage)}>{basicFunction.nombarFormat(value.change_percentage)}%</span></td>
+                                        </tr>
+                                    )}
 
                                 </tbody>
                             </table>

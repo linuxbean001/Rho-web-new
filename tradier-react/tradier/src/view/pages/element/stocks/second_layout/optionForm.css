@@ -1,0 +1,21 @@
+.dropdown-menu{min-width: 9rem;}
+
+
+
+  .optionExpiration > option
+{ color: #7ACFFF !important; }
+
+.optionExpiration:focus > option:checked,.optionExpiration > option:hover
+{ color: #BFFDFF !important;
+text-shadow: 1px 0px 0px !important; 
+background: #000 !important;
+box-shadow: 0 0 10px 100px #905000 inset !important;
+-moz-appearance: none !important; }
+
+.dropdown-menu.optiondropdown.show {
+    max-height: 200px;
+    overflow: auto;
+}
+.dropdown-menu.optiondropdown.show::-webkit-scrollbar { 
+    display: none; 
+}

@@ -15,6 +15,7 @@ if(configApi.isSendBox){
  
 router.post('/previewOrder',(req , res, next) =>{
     const AuthorizationCode = req.body.Authorization;
+    console.log('Authorization', AuthorizationCode);
     const account_id = req.body.account_id;
     const symbol = req.body.formData.Symbol;
     const type = req.body.formData.Type;

@@ -65,3 +65,16 @@ tr.chart_tr td {
     color: #000 !important;
     margin-top: 20px;
 }
+
+
+@media only screen and (min-width: 1400px) {
+    .mt-3 canvas.chartjs-render-monitor {
+        height: 250px !important;
+        width:500px !important;
+        display: inline-block !important;
+    }
+    .card.card-topCahrtAccount {
+        height: 30vh !important;
+        min-height: 440px;
+    }
+  }

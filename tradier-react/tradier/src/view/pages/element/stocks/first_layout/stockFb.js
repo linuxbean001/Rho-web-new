@@ -19,6 +19,8 @@ class StockFb extends Component {
             graphMinValue: 0,
             followStatus: 'Follow',
             localSymbol: '',
+          //  loading: false,
+           // show:'none',
 
             options: {
                 xaxis: {
@@ -190,7 +192,7 @@ class StockFb extends Component {
 
     componentDidMount() {
         this.getGraphData(1);
-        setInterval(this.get, 30000)
+        setInterval(this.get, 10000)
     }
     componentWillReceiveProps(props) {
         this.follow();
@@ -321,6 +323,7 @@ class StockFb extends Component {
                     if (watch.symbol == this.props.pageSymbol) {
                         this.setState({ followStatus: 'Following' });
                         this.state.followStatus = 'Following';
+                       // this.setState({loading: false,show:'none'});
                     }
                 }
 
@@ -336,10 +339,12 @@ class StockFb extends Component {
     }
 
     followAndFollowing() {
+        this.setState({loading: true, show:'block'});
         if (this.state.followStatus === 'Follow' && this.props.pageSymbol) {
             watchList.watchlistsAddSymbols(localStorage.getItem("Authorization"), 'default', this.props.pageSymbol)
                 .then(res => {
                     console.log('following', res);
+                 //   this.setState({loading: false,show:'none'});
                 })
                 .catch(err => {
                     console.log(err);
@@ -349,6 +354,7 @@ class StockFb extends Component {
             watchList.watchlistsRemoveSymbols(localStorage.getItem("Authorization"), 'default', this.props.pageSymbol)
                 .then(res => {
                     console.log('unfollow', res);
+                 //   this.setState({loading: false,show:'none'});
                 })
                 .catch(err => {
                     console.log(err);
@@ -357,15 +363,25 @@ class StockFb extends Component {
     }
     render() {
         var graphData = '';
+        var dataload='';
         if (this.state.optionSeries) {
             graphData = [];
             graphData.push({ 'data': this.state.optionSeries })
         }
+        if (this.state.loading) {
+            console.log("test loding");
+            dataload = <img style={{position:"absolute",top: "50%", left: "50%", transform:"translate(-50%,-50%)" }} src='https://bglide.cachefly.net/img/transparent-background-loading.gif' />
+          }else{
+            dataload ='';
+          }
         return (
+
             <div className="pad-5">
+            {/* <div style={{display:this.state.show}} id="overlay"> {dataload} </div>*/}
                 <div className="card black-background card-border">
                     <div className="card-body">
-
+                   
+                      
                         <div className="row">
                             <div className="col-lg-6 col-sm-6 col-xs-12">
                                 <div style={{ float: "left" }}><h4 className=" f-28 header-title-left text-color">{this.props.pageSymbol ? this.props.pageSymbol : ''} <span className="f-13">{this.props.quoteData.quotes.quote.description}</span></h4></div>
@@ -375,7 +391,7 @@ class StockFb extends Component {
                             </div>
                         </div>
                         <div className="table-responsive-sm">
-                            <h4 className="header-title f-28 title-color">{this.props.quoteData.quotes.quote.last ? '$' + this.props.quoteData.quotes.quote.last : '$0.00'} <span className='f-24' >{this.props.quoteData.quotes.quote.change ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change) : '0.0'} ({this.props.quoteData.quotes.quote.change_percentage ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change_percentage) : '0.0'}%)</span></h4>
+                            <h4 className="header-title f-28 title-color">{this.props.quoteData.quotes.quote.last ? '$' + this.props.quoteData.quotes.quote.last : '$0.00'} <span className={"f-24 " + basicFunction.priceColor(this.props.quoteData.quotes.quote.change)} >{this.props.quoteData.quotes.quote.change ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change) : '0.0'} </span><span className={"f-24 " + basicFunction.priceColor(this.props.quoteData.quotes.quote.change_percentage)} >({this.props.quoteData.quotes.quote.change_percentage ? basicFunction.nombarFormat(this.props.quoteData.quotes.quote.change_percentage) : '0.0'}%)</span></h4>
                             <div className="graph-fb">
                                 {graphData.length > 0 ? <ReactApexChart options={this.state.options} series={graphData} type="candlestick" height="350" /> : <p className="title-color t-a-l p-l-20">No chart data available.</p>}
 

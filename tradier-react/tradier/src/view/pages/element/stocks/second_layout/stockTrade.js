@@ -614,7 +614,7 @@ class StockTrade extends Component {
 
                                 {this.state.formType === 'option' ? this.state.optionformAndPreviewList === 0 ?
                                 <div className="Opthen Tab">
-                                   <OptionForm  />
+                                   <OptionForm pageSymbol ={ this.props.pageSymbol }  />
                                 </div>
                                 : 'Opthen Submit' :'' }
                                 {this.state.formType === 'spread' ? this.state.optionformAndPreviewList === 0 ?

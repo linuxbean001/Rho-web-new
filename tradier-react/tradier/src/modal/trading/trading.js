@@ -57,4 +57,34 @@ export default class Trading{
                               console.log('xxxxxxx xxxxxxxxxxx err is ', err);
                   });
      }
+
+     //----Trade option expire date react api
+     expireDate(Authorization,formData) {
+        return axios.post(apiUrl+'tradeoption/expirations', {Authorization,formData})
+            .then((result) => {
+                //console.log('xxxxxxx xxxxxxxxxxx response is ', result);
+                if(result.data.message=='success'){
+                    return result;
+                }else{ 
+                    return false; 
+                }
+             }).catch(err => {
+                console.log('xxxxxxx xxxxxxxxxxx err is ', err);
+            });
+        }
+
+    expireChainDate(Authorization,formData){
+        console.log('Fomrdataa chain',formData);
+        return axios.post(apiUrl+'tradeoption/chain', {Authorization,formData})
+        .then((result) => {
+            //console.log('xxxxxxx xxxxxxxxxxx response is ', result);
+            if(result.data.message=='success'){
+                return result;
+            }else{ 
+                return false; 
+            }
+         }).catch(err => {
+            console.log('xxxxxxx xxxxxxxxxxx err is ', err);
+        });
+      }  
 }
