@@ -6,7 +6,7 @@ import StockFb from '../../../element/stocks/first_layout/stockFb';
 import StockTqc from '../../../element/stocks/second_layout/stockTqc';
 import MarketData from '../../../../../modal/marketData/marketData';
 import { refreshTimeInterval } from '../../../../../config';
-
+import Spinner from '../../../common/spinner';
 
 const marketData = new MarketData;
 class Stocks extends Component {
@@ -16,7 +16,8 @@ class Stocks extends Component {
       ActiveAccountNumber: '',
       Authorization: localStorage.getItem("Authorization"),
       userAccount: '',
-      topData: ''
+      topData: '',
+      loading: true,
     };
     this.timeInterval = this.timeInterval.bind(this);
   }
@@ -31,6 +32,7 @@ class Stocks extends Component {
         const data = JSON.parse(resQuoue.data.data);
         console.log('refersh data', data);
         this.setState({ topData: data });
+        this.setState({ loading: false });
       }
     })
       .catch(err => {
@@ -39,9 +41,17 @@ class Stocks extends Component {
   }
 
   render() {
-               //console.log('sdhfks fka:',this.state.topData);
+    //console.log('sdhfks fka:',this.state.topData);
+    var dataload = '';
+    if (this.state.loading) {
+      console.log("test loding");
+      dataload = <img style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: '80px' }} src='http://www.dariusland.com/images/load.gif' />
+    } else {
+      dataload = '';
+    }
     return (
       <div>
+        {dataload ? <div style={{ display: this.state.show, backgroundColor: '#141820' }} id="overlay"> <Spinner widthValue='120' leftValue='50' topPaddingValue='50'/> </div> : ''}
         <div className="container-fluid p-l-r-5 ">
           <AccountToggle ActiveAccountNumber={this.state.ActiveAccountNumber} backgroundClass="black-background" backgroundHeaderClass="black-background-header" navTextColorClass="nav-text-color" Cool="color" />
         </div>
@@ -51,7 +61,7 @@ class Stocks extends Component {
           {this.state.topData ? <StockFb pageSymbol={this.props.symbol} quoteData={this.state.topData} /> : ''}
 
           {/* <StockTrade/> */}
-          <StockTqc quoteData={this.state.topData} pageSymbol={this.props.symbol}  />
+          {this.state.topData ? <StockTqc quoteData={this.state.topData} pageSymbol={this.props.symbol} /> : ''}
         </div>
       </div>
 

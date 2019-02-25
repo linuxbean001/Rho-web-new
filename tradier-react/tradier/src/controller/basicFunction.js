@@ -81,6 +81,27 @@ export default class BasicFunction {
     return dateis;
   }
 
+  dateTimeInFullMonthName(date) {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+    const time = d.getHours();
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    const monthnameis = monthNames[month - 1];
+    const dateis = monthnameis + ' ' + day + ',' + year + ' ';
+    var hours = d.getHours();
+    var minutes = d.getMinutes();
+    // var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    return dateis;
+  }
   //month
   plusMinus(data) {
     if (data >= 0) {
